@@ -1,0 +1,24 @@
+@import '../../../../scss/components/variables.scss';
+
+.Badge {
+	.badge-primary {
+		background-color: $blue;
+	}
+
+	.badge-secondary {
+		background-color: $grey-light;
+		color: black;
+	}
+
+	.badge-success {
+		background-color: $mint;
+	}
+
+	.badge-warning {
+		background-color: $yellow;
+	}
+
+	.badge-danger {
+		background-color: $red;
+	}
+}

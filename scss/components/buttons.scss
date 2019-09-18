@@ -1,0 +1,103 @@
+@import './variables.scss';
+
+.button {
+	border-radius: 4px;
+	border: 1px solid transparent;
+	color: white;
+	cursor: pointer;
+	padding: 0.375rem 0.75rem;
+	text-align: center;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button-primary,
+.button-primary:focus,
+.button-primary.disabled {
+	font-weight: 600;
+	background-color: $blue;
+	border-color: $blue;
+}
+.button-primary:hover,
+.button-primary:active {
+	background-color: $blue-dark !important;
+	border-color: $blue-dark !important;
+}
+
+.button-secondary,
+.button-secondary:focus,
+.button-secondary.disabled {
+	background-color: $grey-light;
+	border-color: $grey-light-dark;
+	color: black;
+}
+.button-secondary:hover,
+.button-secondary:active {
+	background-color: $grey-light-dark !important;
+	border-color: $grey-light-dark !important;
+}
+
+.button-success,
+.button-success:focus,
+.button-success.disabled {
+	background-color: $mint;
+	border-color: $mint-dark;
+	color: white;
+}
+.button-success:hover,
+.button-success:active {
+	background-color: $mint-dark !important;
+	border-color: $mint-dark !important;
+	color: white;
+}
+
+.button-warning,
+.button-warning:focus,
+.button-warning.disabled {
+	color: black;
+	background-color: $yellow;
+	border-color: $yellow;
+}
+.button-warning:hover,
+.button-warning:active {
+	background-color: $yellow-dark !important;
+	border-color: $yellow-dark !important;
+}
+
+.button-danger,
+.button-danger:focus,
+.button-danger.disabled {
+	background-color: $red;
+	border-color: $red;
+}
+.button-danger:hover,
+.button-danger:active {
+	background-color: $red-dark !important;
+	border-color: $red-dark !important;
+}
+
+.button-violet,
+.button-violet:focus,
+.button-violet.disabled {
+	background-color: $violet;
+	border-color: $violet-dark;
+	color: white;
+}
+.button-violet:hover,
+.button-violet:active {
+	background-color: $violet-dark !important;
+	border-color: $violet-dark !important;
+	color: white;
+}
+
+a,
+.button-link {
+	color: $pink;
+}
+
+a:hover,
+.button-link:hover {
+	color: $pink-dark;
+}

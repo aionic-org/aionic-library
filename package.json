@@ -1,0 +1,46 @@
+{
+  "name": "aionic-library",
+  "version": "0.0.1",
+  "description": "Aionic Library - Library of shared styles and components for Aionic frontend applications",
+  "author": "Lars Wächter <lars97.waechter@gmail.com>",
+  "private": true,
+  "repository": "https://github.com/Aionic-Apps/aionic-library",
+  "main": "dist/index.js",
+  "homepage": "https://aionic-apps.com",
+  "license": "MIT",
+  "scripts": {
+    "css-build": "node-sass ./scss/ -o ./dist/css/",
+    "css-prettier": "prettier --config ./.prettierrc --write scss/**/*.scss",
+    "js-lint": "eslint ./js",
+    "js-prettier": "prettier --config ./.prettierrc --write src/**/*.js",
+    "build": "rm -rf dist && babel src -d dist --copy-files",
+    "watch": "babel -w src -d dist --copy-files"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.5.5",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "jwt-decode": "^2.2.0",
+    "moment": "^2.24.0",
+    "react-datepicker": "^2.9.6",
+    "react-markdown": "^4.2.2"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "react-router-dom": "^5.0.1"
+  }
+}
