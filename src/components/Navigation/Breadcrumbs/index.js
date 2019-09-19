@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,14 +12,13 @@ const Breadcrumbs = (props) => {
 					{breadcrumbs.map((breadcrumb, i) => {
 						if (i === breadcrumbs.length - 1) {
 							return (
-								// eslint-disable-next-line react/no-array-index-key
 								<li className="breadcrumb-item active" aria-current="page" key={i}>
 									{breadcrumb.title}
 								</li>
 							);
 						}
 						return (
-							<li className="breadcrumb-item">
+							<li className="breadcrumb-item" key={i}>
 								<Link to={breadcrumb.link}>{breadcrumb.title}</Link>
 							</li>
 						);

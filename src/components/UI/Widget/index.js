@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import './Widget.scss';
 
 const Widget = (props) => {
-	const { title, icon, link, iconBackground, iconColor } = props;
+	const { title, icon, link, iconBackground, iconColor, margin } = props;
 
 	const content = (
 		<div className="Widget">
-			<div className="border rounded shadow-sm">
+			<div className={`border rounded shadow-sm ${margin ? 'margin' : ''}`}>
 				<i
 					className={`${icon} w-100 fa-2x text-center py-4`}
 					style={{ background: iconBackground, color: iconColor }}
@@ -21,7 +21,7 @@ const Widget = (props) => {
 	);
 
 	return link.length ? (
-		<Link className="CardLink" to={link}>
+		<Link className="card-link" to={link}>
 			{content}
 		</Link>
 	) : (
@@ -33,7 +33,8 @@ Widget.defaultProps = {
 	title: '',
 	icon: '',
 	link: '',
-	iconColor: 'white'
+	iconColor: 'white',
+	margin: true
 };
 
 export default Widget;

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -16,18 +17,15 @@ var Breadcrumbs = function Breadcrumbs(props) {
 				{ className: 'breadcrumb' },
 				breadcrumbs.map(function (breadcrumb, i) {
 					if (i === breadcrumbs.length - 1) {
-						return (
-							// eslint-disable-next-line react/no-array-index-key
-							React.createElement(
-								'li',
-								{ className: 'breadcrumb-item active', 'aria-current': 'page', key: i },
-								breadcrumb.title
-							)
+						return React.createElement(
+							'li',
+							{ className: 'breadcrumb-item active', 'aria-current': 'page', key: i },
+							breadcrumb.title
 						);
 					}
 					return React.createElement(
 						'li',
-						{ className: 'breadcrumb-item' },
+						{ className: 'breadcrumb-item', key: i },
 						React.createElement(
 							Link,
 							{ to: breadcrumb.link },
