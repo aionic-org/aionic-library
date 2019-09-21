@@ -1,8 +1,11 @@
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 import { create } from 'axios';
+import { saveAs } from 'file-saver';
 
 import Session from './session';
 
@@ -84,6 +87,23 @@ var Api = function () {
 
 			return axios.put(endpoint, data, config).then(function (res) {
 				return _this4.validateResponse(res);
+			}).catch(function (err) {
+				return Promise.reject(err);
+			});
+		}
+	}, {
+		key: 'downloadFile',
+		value: function downloadFile(endpoint) {
+			var filename = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'download.txt';
+
+			var config = { headers: { Authorization: 'Bearer ' + Session.getToken() } };
+
+			return axios.request(_extends({}, config, {
+				url: endpoint,
+				method: 'get',
+				responseType: 'blob'
+			})).then(function (res) {
+				saveAs(res.data, filename);
 			}).catch(function (err) {
 				return Promise.reject(err);
 			});

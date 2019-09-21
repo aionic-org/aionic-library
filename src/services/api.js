@@ -1,4 +1,5 @@
 import { create } from 'axios';
+import { saveAs } from 'file-saver';
 
 import Session from './session';
 
@@ -67,6 +68,24 @@ export default class Api {
 			.put(endpoint, data, config)
 			.then((res) => {
 				return this.validateResponse(res);
+			})
+			.catch((err) => {
+				return Promise.reject(err);
+			});
+	}
+
+	static downloadFile(endpoint, filename = 'download.txt') {
+		const config = { headers: { Authorization: `Bearer ${Session.getToken()}` } };
+
+		return axios
+			.request({
+				...config,
+				url: endpoint,
+				method: 'get',
+				responseType: 'blob'
+			})
+			.then((res) => {
+				saveAs(res.data, filename);
 			})
 			.catch((err) => {
 				return Promise.reject(err);

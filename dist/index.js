@@ -9,6 +9,7 @@ export { default as Spinner } from './components/UI/Spinner';
 export { default as Toast } from './components/UI/Toast';
 export { default as Widget } from './components/UI/Widget';
 export { default as Button } from './components/UI/Button';
+export { default as List } from './components/UI/List';
 export { default as Pills } from './components/UI/Pills';
 export { default as Tabs } from './components/UI/Tabs';
 
