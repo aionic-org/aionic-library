@@ -21,7 +21,7 @@ var Helper = function () {
 
 			var value = target.type === 'checkbox' ? target.checked : target.value;
 
-			if (object[name] !== value) {
+			if (object[name] !== value && object[name] !== null && value === '') {
 				var newValue = null;
 
 				// API can't handle booleans as strings

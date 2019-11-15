@@ -6,7 +6,7 @@ export default class Helper {
 		const { name } = target;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 
-		if (object[name] !== value) {
+		if (object[name] !== value && object[name] !== null && value === '') {
 			let newValue = null;
 
 			// API can't handle booleans as strings

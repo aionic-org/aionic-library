@@ -1,6 +1,8 @@
 @import 'aionic-library/scss/components/variables.scss';
 
 .Badge {
+	margin-bottom: 1rem;
+
 	.badge-primary {
 		background-color: $blue;
 	}
