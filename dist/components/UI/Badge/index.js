@@ -5,11 +5,16 @@ import './Badge.scss';
 var Badge = function Badge(props) {
 	var label = props.label,
 	    info = props.info,
-	    type = props.type;
+	    type = props.type,
+	    margin = props.margin;
 
 
 	var getBadgeClasses = function getBadgeClasses() {
 		var badgeClasses = ['badge', 'badge-' + type];
+
+		if (margin) {
+			badgeClasses.push('badge-margin');
+		}
 
 		return badgeClasses.join(' ');
 	};
@@ -27,6 +32,7 @@ var Badge = function Badge(props) {
 
 Badge.defaultProps = {
 	info: '',
+	margin: false,
 	type: 'primary'
 };
 

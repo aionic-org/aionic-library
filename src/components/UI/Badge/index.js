@@ -3,10 +3,14 @@ import React from 'react';
 import './Badge.scss';
 
 const Badge = (props) => {
-	const { label, info, type } = props;
+	const { label, info, type, margin } = props;
 
 	const getBadgeClasses = () => {
 		const badgeClasses = ['badge', `badge-${type}`];
+
+		if (margin) {
+			badgeClasses.push('badge-margin');
+		}
 
 		return badgeClasses.join(' ');
 	};
@@ -22,6 +26,7 @@ const Badge = (props) => {
 
 Badge.defaultProps = {
 	info: '',
+	margin: false,
 	type: 'primary'
 };
 

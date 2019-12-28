@@ -16,7 +16,7 @@ var Footer = function Footer() {
 					rel: "noopener noreferrer",
 					className: "text-muted d-block text-center"
 				},
-				"Aionic Apps"
+				"Aionic"
 			)
 		)
 	);

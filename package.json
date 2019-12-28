@@ -14,7 +14,7 @@
     "js-lint": "eslint ./js",
     "js-prettier": "prettier --config ./.prettierrc --write src/**/*.js",
     "build": "rm -rf dist && babel src -d dist --copy-files",
-    "watch": "babel -w src -d dist --copy-files"
+    "watch": "rm -rf && babel -w src -d dist --copy-files"
   },
   "devDependencies": {
     "@babel/runtime": "^7.5.5",

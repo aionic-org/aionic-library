@@ -1,8 +1,4 @@
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -17,6 +13,7 @@ import Api from '../services/api';
 import Session from '../services/session';
 
 import Spinner from './UI/Spinner';
+import Helper from '../services/helper';
 
 var SigninForm = function (_Component) {
 	_inherits(SigninForm, _Component);
@@ -27,12 +24,8 @@ var SigninForm = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (SigninForm.__proto__ || Object.getPrototypeOf(SigninForm)).call(this, props));
 
 		_this.handleInputChange = function (e) {
-			var name = e.target.name;
-			var value = e.target.value;
-
-
-			_this.setState(function (prevState) {
-				return { user: _extends({}, prevState.user, _defineProperty({}, name, value)) };
+			Helper.updateObjectPropByEvent(_this.state.user, e, function (user) {
+				_this.setState({ user: user });
 			});
 		};
 
@@ -45,10 +38,17 @@ var SigninForm = function (_Component) {
 			});
 
 			Session.signinUser({ user: _this.state.user }).then(function (res) {
-				Session.clearUser();
-				Session.setToken(res.token);
-				Session.setUser(res.user);
-				_this.props.history.push('/');
+				if (res.token) {
+					Session.clearUser();
+					Session.setToken(res.token);
+					Session.setUser(res.user);
+					_this.props.history.push('/');
+				} else {
+					_this.setState({
+						isLoading: false,
+						msg: Api.handleHttpError('Failed to login, no token provided!')
+					});
+				}
 			}).catch(function (err) {
 				_this.setState({
 					isLoading: false,

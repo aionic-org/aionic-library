@@ -5,6 +5,7 @@ import Api from '../services/api';
 import Session from '../services/session';
 
 import Spinner from './UI/Spinner';
+import Helper from '../services/helper';
 
 class SigninForm extends Component {
 	constructor(props) {
@@ -14,11 +15,8 @@ class SigninForm extends Component {
 	}
 
 	handleInputChange = (e) => {
-		const { name } = e.target;
-		const { value } = e.target;
-
-		this.setState((prevState) => {
-			return { user: { ...prevState.user, [name]: value } };
+		Helper.updateObjectPropByEvent(this.state.user, e, (user) => {
+			this.setState({ user });
 		});
 	};
 
@@ -32,10 +30,17 @@ class SigninForm extends Component {
 
 		Session.signinUser({ user: this.state.user })
 			.then((res) => {
-				Session.clearUser();
-				Session.setToken(res.token);
-				Session.setUser(res.user);
-				this.props.history.push('/');
+				if (res.token) {
+					Session.clearUser();
+					Session.setToken(res.token);
+					Session.setUser(res.user);
+					this.props.history.push('/');
+				} else {
+					this.setState({
+						isLoading: false,
+						msg: Api.handleHttpError('Failed to login, no token provided!')
+					});
+				}
 			})
 			.catch((err) => {
 				this.setState({
