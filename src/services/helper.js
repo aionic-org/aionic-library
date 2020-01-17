@@ -20,6 +20,15 @@ export default class Helper {
 		}
 	}
 
+	static isJson(string) {
+		try {
+			JSON.parse(string);
+			return true;
+		} catch (error) {
+			return false;
+		}
+	}
+
 	static formatDateTime(_date) {
 		const date = _date ? moment(_date) : '';
 		return date ? date.format('YYYY-MM-DD hh:mm a') : '-';

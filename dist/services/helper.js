@@ -35,6 +35,16 @@ var Helper = function () {
 			}
 		}
 	}, {
+		key: 'isJson',
+		value: function isJson(string) {
+			try {
+				JSON.parse(string);
+				return true;
+			} catch (error) {
+				return false;
+			}
+		}
+	}, {
 		key: 'formatDateTime',
 		value: function formatDateTime(_date) {
 			var date = _date ? moment(_date) : '';
