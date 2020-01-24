@@ -11,7 +11,8 @@ import Session from './session';
 
 // default config
 var axios = create({
-	baseURL: process.env.REACT_APP_CORE_URL
+	baseURL: process.env.REACT_APP_CORE_URL,
+	headers: { Client: process.env.REACT_APP_NAME_SHORT }
 });
 
 var Api = function () {
@@ -63,6 +64,7 @@ var Api = function () {
 			var authorize = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
 			var config = {};
+
 			if (authorize === true) {
 				config.headers = { Authorization: 'Bearer ' + Session.getToken() };
 			}

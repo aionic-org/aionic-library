@@ -39,6 +39,16 @@ var Session = function () {
 			});
 		}
 	}, {
+		key: 'getConfig',
+		value: function getConfig() {
+			return JSON.parse(localStorage.getItem('config'));
+		}
+	}, {
+		key: 'setConfig',
+		value: function setConfig(config) {
+			localStorage.setItem('config', JSON.stringify(config));
+		}
+	}, {
 		key: 'getToken',
 		value: function getToken() {
 			return localStorage.getItem('token');
@@ -61,6 +71,7 @@ var Session = function () {
 	}, {
 		key: 'clearUser',
 		value: function clearUser() {
+			localStorage.removeItem('config');
 			localStorage.removeItem('token');
 			localStorage.removeItem('user');
 		}

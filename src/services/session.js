@@ -32,6 +32,14 @@ export default class Session {
 			});
 	}
 
+	static getConfig() {
+		return JSON.parse(localStorage.getItem('config'));
+	}
+
+	static setConfig(config) {
+		localStorage.setItem('config', JSON.stringify(config));
+	}
+
 	static getToken() {
 		return localStorage.getItem('token');
 	}
@@ -49,6 +57,7 @@ export default class Session {
 	}
 
 	static clearUser() {
+		localStorage.removeItem('config');
 		localStorage.removeItem('token');
 		localStorage.removeItem('user');
 	}

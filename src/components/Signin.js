@@ -30,10 +30,13 @@ class SigninForm extends Component {
 
 		Session.signinUser({ user: this.state.user })
 			.then((res) => {
-				if (res.token) {
+				const { config, token, user } = res;
+
+				if (token) {
 					Session.clearUser();
-					Session.setToken(res.token);
-					Session.setUser(res.user);
+					Session.setConfig(config);
+					Session.setToken(token);
+					Session.setUser(user);
 					this.props.history.push('/');
 				} else {
 					this.setState({

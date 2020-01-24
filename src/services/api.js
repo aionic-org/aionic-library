@@ -5,7 +5,8 @@ import Session from './session';
 
 // default config
 const axios = create({
-	baseURL: process.env.REACT_APP_CORE_URL
+	baseURL: process.env.REACT_APP_CORE_URL,
+	headers: { Client: process.env.REACT_APP_NAME_SHORT }
 });
 
 export default class Api {
@@ -44,6 +45,7 @@ export default class Api {
 
 	static postData(endpoint, data, authorize = true) {
 		const config = {};
+
 		if (authorize === true) {
 			config.headers = { Authorization: `Bearer ${Session.getToken()}` };
 		}

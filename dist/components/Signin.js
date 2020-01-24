@@ -38,10 +38,16 @@ var SigninForm = function (_Component) {
 			});
 
 			Session.signinUser({ user: _this.state.user }).then(function (res) {
-				if (res.token) {
+				var config = res.config,
+				    token = res.token,
+				    user = res.user;
+
+
+				if (token) {
 					Session.clearUser();
-					Session.setToken(res.token);
-					Session.setUser(res.user);
+					Session.setConfig(config);
+					Session.setToken(token);
+					Session.setUser(user);
 					_this.props.history.push('/');
 				} else {
 					_this.setState({
