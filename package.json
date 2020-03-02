@@ -1,12 +1,12 @@
 {
   "name": "aionic-library",
   "version": "0.0.1",
-  "description": "Aionic Library - Library of shared styles and components for Aionic frontend applications",
+  "description": "Library of shared styles and components for Aionic frontend applications",
   "author": "Lars Wächter <lars97.waechter@gmail.com>",
   "private": true,
-  "repository": "https://github.com/Aionic-Apps/aionic-library",
+  "repository": "https://github.com/aionic-org/aionic-library",
   "main": "dist/index.js",
-  "homepage": "https://aionic-apps.com",
+  "homepage": "https://aionic.org",
   "license": "MIT",
   "scripts": {
     "css-build": "node-sass ./scss/ -o ./dist/css/",
