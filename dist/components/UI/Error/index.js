@@ -1,25 +1,30 @@
-import React from 'react';
+"use strict";
 
-import './Error.scss';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./Error.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Error = function Error(props) {
-	var icon = props.showIcon ? React.createElement('i', { className: 'fas fa-exclamation-triangle d-block text-center' }) : null;
-
-	return React.createElement(
-		'div',
-		{ className: 'Error ' + props.assignedClasses.join(' ') },
-		icon,
-		React.createElement(
-			'p',
-			{ className: 'text-center text-danger mt-2 mb-0' },
-			props.message
-		)
-	);
+  var icon = props.showIcon ? _react["default"].createElement("i", {
+    className: "fas fa-exclamation-triangle d-block text-center"
+  }) : null;
+  return _react["default"].createElement("div", {
+    className: "Error ".concat(props.assignedClasses.join(' '))
+  }, icon, _react["default"].createElement("p", {
+    className: "text-center text-danger mt-2 mb-0"
+  }, props.message));
 };
 
 Error.defaultProps = {
-	assignedClasses: [],
-	showIcon: true
+  assignedClasses: [],
+  showIcon: true
 };
-
-export default Error;
+var _default = Error;
+exports["default"] = _default;

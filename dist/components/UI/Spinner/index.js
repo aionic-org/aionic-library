@@ -1,24 +1,33 @@
-import React from 'react';
+"use strict";
 
-import './Spinner.scss';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./Spinner.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Spinner = function Spinner(props) {
-	var onBtn = props.onBtn,
-	    showPadding = props.showPadding;
-
-
-	return React.createElement(
-		'div',
-		{ className: 'Spinner ' + (onBtn ? 'onBtn' : '') + ' ' + (showPadding ? 'showPadding' : '') },
-		React.createElement('div', { className: 'bounce1' }),
-		React.createElement('div', { className: 'bounce2' }),
-		React.createElement('div', { className: 'bounce3' })
-	);
+  var onBtn = props.onBtn,
+      showPadding = props.showPadding;
+  return _react["default"].createElement("div", {
+    className: "Spinner ".concat(onBtn ? 'onBtn' : '', " ").concat(showPadding ? 'showPadding' : '')
+  }, _react["default"].createElement("div", {
+    className: "bounce1"
+  }), _react["default"].createElement("div", {
+    className: "bounce2"
+  }), _react["default"].createElement("div", {
+    className: "bounce3"
+  }));
 };
 
 Spinner.defaultProps = {
-	onBtn: false,
-	showPadding: false
+  onBtn: false,
+  showPadding: false
 };
-
-export default Spinner;
+var _default = Spinner;
+exports["default"] = _default;

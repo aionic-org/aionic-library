@@ -5,7 +5,7 @@ import Session from './session';
 
 // default config
 const axios = create({
-	baseURL: process.env.REACT_APP_CORE_URL,
+	baseURL: process.env.REACT_APP_AIONIC_CORE_URL,
 	headers: { Client: process.env.REACT_APP_NAME_SHORT }
 });
 

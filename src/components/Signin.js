@@ -28,7 +28,7 @@ class SigninForm extends Component {
 			msg: ''
 		});
 
-		Session.signinUser({ user: this.state.user })
+		Session.signinUser(this.state.user)
 			.then((res) => {
 				const { config, token, user } = res;
 

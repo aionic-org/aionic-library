@@ -1,47 +1,52 @@
 {
-  "name": "aionic-library",
-  "version": "0.0.1",
-  "description": "Library of shared styles and components for Aionic frontend applications",
-  "author": "Lars Wächter <lars97.waechter@gmail.com>",
-  "private": true,
-  "repository": "https://github.com/aionic-org/aionic-library",
-  "main": "dist/index.js",
-  "homepage": "https://aionic.org",
-  "license": "MIT",
-  "scripts": {
-    "css-build": "node-sass ./scss/ -o ./dist/css/",
-    "css-prettier": "prettier --config ./.prettierrc --write scss/**/*.scss",
-    "js-lint": "eslint ./js",
-    "js-prettier": "prettier --config ./.prettierrc --write src/**/*.js",
-    "build": "rm -rf dist && babel src -d dist --copy-files",
-    "watch": "rm -rf && babel -w src -d dist --copy-files"
-  },
-  "devDependencies": {
-    "@babel/runtime": "^7.8.4",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^10.0.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.18.0",
-    "node-sass": "^4.13.1",
-    "prettier": "^1.19.1"
-  },
-  "dependencies": {
-    "axios": "^0.19.2",
-    "file-saver": "^2.0.2",
-    "jwt-decode": "^2.2.0",
-    "moment": "^2.24.0",
-    "react-datepicker": "^2.11.0",
-    "react-markdown": "^4.3.1"
-  },
-  "peerDependencies": {
-    "react": "^16.12.0",
-    "react-router-dom": "^5.1.2"
-  }
+	"name": "aionic-library",
+	"version": "0.0.1",
+	"description": "Library of shared styles and components for Aionic applications",
+	"author": "Lars Wächter <lars97.waechter@gmail.com>",
+	"private": true,
+	"main": "dist/index.js",
+	"homepage": "https://aionic.org",
+	"repository": {
+		"url": "https://github.com/aionic-org/aionic-library"
+	},
+	"bugs": {
+		"url": "https://github.com/aionic-org/aionic-library/issues"
+	},
+	"license": "MIT",
+	"scripts": {
+		"css-build": "node-sass ./scss/ -o ./dist/css/",
+		"css-prettier": "prettier --config ./.prettierrc --write scss/**/*.scss",
+		"js-lint": "eslint src/*.js",
+		"js-prettier": "prettier --config ./.prettierrc --write src/**/*.js",
+		"build": "rm -rf dist && babel src -d dist --copy-files",
+		"watch": "rm -rf && babel -w src -d dist --copy-files"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.8.4",
+		"@babel/core": "^7.8.6",
+		"@babel/plugin-proposal-class-properties": "^7.8.3",
+		"@babel/preset-env": "^7.8.6",
+		"@babel/preset-react": "^7.8.3",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb": "^18.0.1",
+		"eslint-config-prettier": "^6.10.0",
+		"eslint-plugin-import": "^2.20.1",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-react": "^7.18.3",
+		"node-sass": "^4.13.1",
+		"prettier": "^1.19.1"
+	},
+	"dependencies": {
+		"axios": "^0.19.2",
+		"file-saver": "^2.0.2",
+		"jwt-decode": "^2.2.0",
+		"moment": "^2.24.0",
+		"react-datepicker": "^2.13.0",
+		"react-markdown": "^4.3.1"
+	},
+	"peerDependencies": {
+		"react": "^16.13.0",
+		"react-router-dom": "^5.1.2"
+	}
 }
