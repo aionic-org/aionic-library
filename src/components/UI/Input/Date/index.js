@@ -21,6 +21,7 @@ const InputDate = (props) => {
 				onChange={handleChange}
 				dateFormat="yyyy-MM-dd"
 				name={name}
+				autoComplete="false"
 			/>
 		</div>
 	);

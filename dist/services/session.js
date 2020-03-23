@@ -51,7 +51,7 @@ var Session = /*#__PURE__*/function () {
   }, {
     key: "getConfig",
     value: function getConfig() {
-      return JSON.parse(localStorage.getItem('config'));
+      return JSON.parse(localStorage.getItem('config') || '{}');
     }
   }, {
     key: "setConfig",

@@ -7,10 +7,20 @@
 @import './components/buttons';
 @import './components/cards';
 @import './components/form';
+@import './components/helper';
 @import './components/modal';
 @import './components/nav';
 @import './components/scrollbar';
 
-.cursor-pointer {
-	cursor: pointer;
+body {
+	background-color: $bg-grey;
+	font-family: 'Lexend Deca', sans-serif;
+}
+
+#page-wrapper {
+	padding-bottom: 15px;
+
+	> .content {
+		padding: 20px 20px 0px;
+	}
 }

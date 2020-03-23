@@ -16,7 +16,7 @@ const Badge = (props) => {
 	};
 
 	return (
-		<div className="Badge text-uppercase">
+		<div className="Badge text-lowercase">
 			<span className={getBadgeClasses()} title={info}>
 				{label}
 			</span>

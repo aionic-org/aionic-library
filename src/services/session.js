@@ -33,7 +33,7 @@ export default class Session {
 	}
 
 	static getConfig() {
-		return JSON.parse(localStorage.getItem('config'));
+		return JSON.parse(localStorage.getItem('config') || '{}');
 	}
 
 	static setConfig(config) {

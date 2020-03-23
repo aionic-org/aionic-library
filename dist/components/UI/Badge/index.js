@@ -28,7 +28,7 @@ var Badge = function Badge(props) {
   };
 
   return _react["default"].createElement("div", {
-    className: "Badge text-uppercase"
+    className: "Badge text-lowercase"
   }, _react["default"].createElement("span", {
     className: getBadgeClasses(),
     title: info

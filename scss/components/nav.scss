@@ -5,10 +5,9 @@
 	background-color: #0984e3;
 }
 
-.nav {
-	.nav-link {
-		color: $blue;
-	}
+.nav-tabs .nav-link.active {
+	background-color: $grey-light;
+	border-color: $grey-light-dark;
 }
 
 .nav-pills > .nav-link.active {

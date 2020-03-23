@@ -49,7 +49,8 @@ var InputDate = function InputDate(props) {
     selected: new Date(date),
     onChange: handleChange,
     dateFormat: "yyyy-MM-dd",
-    name: name
+    name: name,
+    autoComplete: "false"
   }));
 };
 

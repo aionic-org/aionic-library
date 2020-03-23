@@ -24,6 +24,9 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function useFetcher(url) {
+  var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var fnSort = arguments.length > 2 ? arguments[2] : undefined;
+
   var _useState = (0, _react.useState)(true),
       _useState2 = _slicedToArray(_useState, 2),
       isLoading = _useState2[0],
@@ -48,30 +51,43 @@ function useFetcher(url) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.prev = 0;
+
+                if (!url.length) {
+                  _context.next = 8;
+                  break;
+                }
+
                 setError(null);
                 setIsLoading(true);
-                _context.next = 5;
-                return _api["default"].fetchData(url);
+                _context.next = 6;
+                return _api["default"].fetchData(url, params);
 
-              case 5:
+              case 6:
                 result = _context.sent;
-                setData(result);
+
+                if (typeof fnSort === 'function') {
+                  setData(result.sort(fnSort));
+                } else {
+                  setData(result);
+                }
+
+              case 8:
                 setIsLoading(false);
-                _context.next = 14;
+                _context.next = 15;
                 break;
 
-              case 10:
-                _context.prev = 10;
+              case 11:
+                _context.prev = 11;
                 _context.t0 = _context["catch"](0);
                 setError(_api["default"].handleHttpError(_context.t0));
                 setIsLoading(false);
 
-              case 14:
+              case 15:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 10]]);
+        }, _callee, null, [[0, 11]]);
       }));
 
       return function fetchData() {

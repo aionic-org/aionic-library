@@ -48,7 +48,7 @@ var Button = function Button(props) {
     className: getButtonClasses(),
     onClick: onClickHandler
   }, icon ? _react["default"].createElement("i", {
-    className: "".concat(icon, " ").concat(label ? 'mr-2' : '')
+    className: "".concat(icon, " ").concat(label.length ? 'mr-2' : '')
   }) : null, label);
 };
 

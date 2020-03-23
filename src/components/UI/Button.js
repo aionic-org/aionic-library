@@ -29,7 +29,7 @@ const Button = (props) => {
 
 	return (
 		<button type="button" className={getButtonClasses()} onClick={onClickHandler}>
-			{icon ? <i className={`${icon} ${label ? 'mr-2' : ''}`} /> : null}
+			{icon ? <i className={`${icon} ${label.length ? 'mr-2' : ''}`} /> : null}
 			{label}
 		</button>
 	);
