@@ -20,6 +20,10 @@
 	animation: fadein 0.5s;
 }
 
+.Modal.large {
+	max-width: 800px;
+}
+
 .Modal .modal-body {
 	overflow-y: auto;
 	max-height: calc(100vh - 200px);

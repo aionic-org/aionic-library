@@ -4,6 +4,11 @@ export { default as Breadcrumbs } from './components/Navigation/Breadcrumbs';
 
 export { default as Badge } from './components/UI/Badge';
 export { default as Error } from './components/UI/Error';
+export { default as InputDate } from './components/UI/Input/Date';
+export { default as InputMarkdown } from './components/UI/Input/Markdown';
+export { default as InputRadio } from './components/UI/Input/Radio';
+export { default as InputSelect } from './components/UI/Input/Select';
+export { default as Modal } from './components/UI/Modal';
 export { default as Progress } from './components/UI/Progress';
 export { default as Spinner } from './components/UI/Spinner';
 export { default as Toast } from './components/UI/Toast';
@@ -11,11 +16,6 @@ export { default as Button } from './components/UI/Button';
 export { default as List } from './components/UI/List';
 export { default as Pills } from './components/UI/Pills';
 export { default as Tabs } from './components/UI/Tabs';
-
-export { default as InputDate } from './components/UI/Input/Date';
-export { default as InputMarkdown } from './components/UI/Input/Markdown';
-export { default as InputRadio } from './components/UI/Input/Radio';
-export { default as InputSelect } from './components/UI/Input/Select';
 
 export { default as Widget } from './components/Widget';
 
