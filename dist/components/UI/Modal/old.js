@@ -38,24 +38,24 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 /**
  * Selfmade Modal component (old)
  */
-var Modal = /*#__PURE__*/function (_Component) {
-  _inherits(Modal, _Component);
+var ModalOld = /*#__PURE__*/function (_Component) {
+  _inherits(ModalOld, _Component);
 
-  function Modal(props) {
+  function ModalOld(props) {
     var _this;
 
-    _classCallCheck(this, Modal);
+    _classCallCheck(this, ModalOld);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Modal).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ModalOld).call(this, props));
     _this.el = document.createElement('div');
     _this.modalRoot = null;
     return _this;
   }
 
-  _createClass(Modal, [{
+  _createClass(ModalOld, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.modalRoot = document.getElementById('modal');
+      this.modalRoot = document.querySelector('body');
       this.modalRoot.appendChild(this.el);
     }
   }, {
@@ -93,12 +93,12 @@ var Modal = /*#__PURE__*/function (_Component) {
     }
   }]);
 
-  return Modal;
+  return ModalOld;
 }(_react.Component);
 
-Modal.defaultProps = {
+ModalOld.defaultProps = {
   isOpen: true,
   large: false
 };
-var _default = Modal;
+var _default = ModalOld;
 exports["default"] = _default;

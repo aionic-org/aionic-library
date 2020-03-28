@@ -7,7 +7,7 @@ import './Modal.scss';
  * Selfmade Modal component (old)
  */
 
-class Modal extends Component {
+class ModalOld extends Component {
 	constructor(props) {
 		super(props);
 		this.el = document.createElement('div');
@@ -15,7 +15,7 @@ class Modal extends Component {
 	}
 
 	componentDidMount() {
-		this.modalRoot = document.getElementById('modal');
+		this.modalRoot = document.querySelector('body');
 		this.modalRoot.appendChild(this.el);
 	}
 
@@ -45,9 +45,9 @@ class Modal extends Component {
 	}
 }
 
-Modal.defaultProps = {
+ModalOld.defaultProps = {
 	isOpen: true,
 	large: false
 };
 
-export default Modal;
+export default ModalOld;

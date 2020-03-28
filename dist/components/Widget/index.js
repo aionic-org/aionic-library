@@ -36,7 +36,7 @@ var Widget = function Widget(props) {
   }, _react["default"].createElement("span", null, title))));
 
   return link.length ? _react["default"].createElement(_reactRouterDom.Link, {
-    className: "card-link",
+    className: "card-link-custom",
     to: link
   }, content) : content;
 };

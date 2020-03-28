@@ -21,7 +21,7 @@ const Widget = (props) => {
 	);
 
 	return link.length ? (
-		<Link className="card-link" to={link}>
+		<Link className="card-link-custom" to={link}>
 			{content}
 		</Link>
 	) : (

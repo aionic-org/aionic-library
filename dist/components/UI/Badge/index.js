@@ -15,7 +15,8 @@ var Badge = function Badge(props) {
   var label = props.label,
       info = props.info,
       type = props.type,
-      margin = props.margin;
+      margin = props.margin,
+      classes = props.classes;
 
   var getBadgeClasses = function getBadgeClasses() {
     var badgeClasses = ['badge', "badge-".concat(type)];
@@ -28,7 +29,7 @@ var Badge = function Badge(props) {
   };
 
   return _react["default"].createElement("div", {
-    className: "Badge text-lowercase"
+    className: "Badge text-lowercase ".concat(classes.join(' '))
   }, _react["default"].createElement("span", {
     className: getBadgeClasses(),
     title: info
@@ -36,6 +37,7 @@ var Badge = function Badge(props) {
 };
 
 Badge.defaultProps = {
+  classes: [],
   info: '',
   margin: false,
   type: 'primary'

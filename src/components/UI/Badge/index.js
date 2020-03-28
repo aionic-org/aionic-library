@@ -3,7 +3,7 @@ import React from 'react';
 import './Badge.scss';
 
 const Badge = (props) => {
-	const { label, info, type, margin } = props;
+	const { label, info, type, margin, classes } = props;
 
 	const getBadgeClasses = () => {
 		const badgeClasses = ['badge', `badge-${type}`];
@@ -16,7 +16,7 @@ const Badge = (props) => {
 	};
 
 	return (
-		<div className="Badge text-lowercase">
+		<div className={`Badge text-lowercase ${classes.join(' ')}`}>
 			<span className={getBadgeClasses()} title={info}>
 				{label}
 			</span>
@@ -25,6 +25,7 @@ const Badge = (props) => {
 };
 
 Badge.defaultProps = {
+	classes: [],
 	info: '',
 	margin: false,
 	type: 'primary'
