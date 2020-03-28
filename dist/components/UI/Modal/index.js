@@ -13,12 +13,12 @@ require("./Modal.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Modal = function Modal(props) {
-  var title = props.title,
-      children = props.children,
-      isOpen = props.isOpen,
-      large = props.large,
-      handleClose = props.handleClose;
+var Modal = function Modal(_ref) {
+  var title = _ref.title,
+      children = _ref.children,
+      isOpen = _ref.isOpen,
+      large = _ref.large,
+      handleClose = _ref.handleClose;
   return _react["default"].createElement(_reactModal["default"], {
     isOpen: isOpen,
     contentLabel: "Minimal Modal Example",

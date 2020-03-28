@@ -11,7 +11,9 @@ require("./Toast.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Toast = function Toast(props) {
+var Toast = function Toast(_ref) {
+  var success = _ref.success,
+      msg = _ref.msg;
   return _react["default"].createElement("div", {
     role: "alert",
     "aria-live": "assertive",
@@ -29,14 +31,14 @@ var Toast = function Toast(props) {
     focusable: "false",
     role: "img"
   }, _react["default"].createElement("rect", {
-    fill: "".concat(props.success ? '#00b894' : '#d63031'),
+    fill: "".concat(success ? '#00b894' : '#d63031'),
     width: "100%",
     height: "100%"
   })), _react["default"].createElement("strong", {
     className: "mr-auto"
   }, process.env.REACT_APP_NAME), _react["default"].createElement("small", null, "Just now")), _react["default"].createElement("div", {
     className: "toast-body"
-  }, props.msg));
+  }, msg));
 };
 
 Toast.defaultProps = {

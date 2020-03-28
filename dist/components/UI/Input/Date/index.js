@@ -47,6 +47,7 @@ var InputDate = function InputDate(props) {
   }, _react["default"].createElement(_reactDatepicker["default"], {
     className: "form-control",
     selected: new Date(date),
+    minDate: new Date(),
     onChange: handleChange,
     dateFormat: "yyyy-MM-dd",
     name: name,

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Toast.scss';
 
-const Toast = (props) => (
+const Toast = ({ success, msg }) => (
 	<div
 		role="alert"
 		aria-live="assertive"
@@ -20,12 +20,12 @@ const Toast = (props) => (
 				focusable="false"
 				role="img"
 			>
-				<rect fill={`${props.success ? '#00b894' : '#d63031'}`} width="100%" height="100%" />
+				<rect fill={`${success ? '#00b894' : '#d63031'}`} width="100%" height="100%" />
 			</svg>
 			<strong className="mr-auto">{process.env.REACT_APP_NAME}</strong>
 			<small>Just now</small>
 		</div>
-		<div className="toast-body">{props.msg}</div>
+		<div className="toast-body">{msg}</div>
 	</div>
 );
 

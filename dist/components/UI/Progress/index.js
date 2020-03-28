@@ -11,9 +11,9 @@ require("./Progress.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Progress = function Progress(props) {
-  var progress = props.progress,
-      showPercent = props.showPercent;
+var Progress = function Progress(_ref) {
+  var progress = _ref.progress,
+      showPercent = _ref.showPercent;
   return _react["default"].createElement("div", {
     className: "progress"
   }, _react["default"].createElement("div", {

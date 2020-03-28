@@ -12,6 +12,7 @@ export { default as Modal } from './components/UI/Modal';
 export { default as Progress } from './components/UI/Progress';
 export { default as Spinner } from './components/UI/Spinner';
 export { default as Toast } from './components/UI/Toast';
+export { default as Alert } from './components/UI/Alert';
 export { default as Button } from './components/UI/Button';
 export { default as List } from './components/UI/List';
 export { default as Pills } from './components/UI/Pills';

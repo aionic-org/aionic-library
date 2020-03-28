@@ -12,8 +12,8 @@ var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /* eslint-disable react/no-array-index-key */
-var Breadcrumbs = function Breadcrumbs(props) {
-  var breadcrumbs = props.breadcrumbs;
+var Breadcrumbs = function Breadcrumbs(_ref) {
+  var breadcrumbs = _ref.breadcrumbs;
   return _react["default"].createElement("div", {
     className: "Breadcrumbs"
   }, _react["default"].createElement("nav", {

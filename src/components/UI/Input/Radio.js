@@ -1,16 +1,16 @@
 import React from 'react';
 
-const InputRadio = (props) => (
+const InputRadio = ({ title, defaultChecked, value, onChange }) => (
 	<div className="InputRadio form-check form-check-inline">
 		<input
 			type="radio"
 			name="priority"
 			className="form-check-input"
-			value={props.value}
-			defaultChecked={props.defaultChecked === props.value ? 'checked' : ''}
-			onChange={props.onChange}
+			value={value}
+			defaultChecked={defaultChecked === value ? 'checked' : ''}
+			onChange={onChange}
 		/>
-		<label className="form-check-label">{props.title}</label>
+		<label className="form-check-label">{title}</label>
 	</div>
 );
 

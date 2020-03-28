@@ -12,14 +12,17 @@ require("./Error.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Error = function Error(props) {
-  var icon = props.showIcon ? _react["default"].createElement("i", {
+  var message = props.message,
+      assignedClasses = props.assignedClasses,
+      showIcon = props.showIcon;
+  var icon = showIcon ? _react["default"].createElement("i", {
     className: "fas fa-exclamation-triangle d-block text-center"
   }) : null;
   return _react["default"].createElement("div", {
-    className: "Error ".concat(props.assignedClasses.join(' '))
+    className: "Error ".concat(assignedClasses.join(' '))
   }, icon, _react["default"].createElement("p", {
     className: "text-center text-danger mt-2 mb-0"
-  }, props.message));
+  }, message));
 };
 
 Error.defaultProps = {

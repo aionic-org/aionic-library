@@ -3,14 +3,14 @@ import React from 'react';
 import './Error.scss';
 
 const Error = (props) => {
-	const icon = props.showIcon ? (
-		<i className="fas fa-exclamation-triangle d-block text-center" />
-	) : null;
+	const { message, assignedClasses, showIcon } = props;
+
+	const icon = showIcon ? <i className="fas fa-exclamation-triangle d-block text-center" /> : null;
 
 	return (
-		<div className={`Error ${props.assignedClasses.join(' ')}`}>
+		<div className={`Error ${assignedClasses.join(' ')}`}>
 			{icon}
-			<p className="text-center text-danger mt-2 mb-0">{props.message}</p>
+			<p className="text-center text-danger mt-2 mb-0">{message}</p>
 		</div>
 	);
 };

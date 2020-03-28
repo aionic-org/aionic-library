@@ -9,17 +9,27 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var InputSelect = function InputSelect(props) {
+var InputSelect = function InputSelect(_ref) {
+  var optionList = _ref.optionList,
+      name = _ref.name,
+      classes = _ref.classes,
+      defaultValue = _ref.defaultValue,
+      value = _ref.value,
+      onChange = _ref.onChange,
+      disabled = _ref.disabled,
+      required = _ref.required,
+      showDefault = _ref.showDefault;
   return _react["default"].createElement("select", {
-    name: props.name,
-    className: "InputSelect form-control ".concat(props.classes.join(' ')),
-    defaultValue: props.defaultValue,
-    onChange: props.onChange,
-    disabled: props.disabled,
-    required: props.required
-  }, props.showDefault ? _react["default"].createElement("option", {
+    name: name,
+    className: "InputSelect form-control ".concat(classes.join(' ')),
+    defaultValue: defaultValue,
+    value: value,
+    onChange: onChange,
+    disabled: disabled,
+    required: required
+  }, showDefault ? _react["default"].createElement("option", {
     value: ""
-  }, "-") : null, props.optionList.map(function (option, i) {
+  }, "-") : null, optionList.map(function (option, i) {
     return _react["default"].createElement("option", {
       value: option.value,
       key: option.id || i

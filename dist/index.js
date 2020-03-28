@@ -75,6 +75,12 @@ Object.defineProperty(exports, "Toast", {
     return _Toast["default"];
   }
 });
+Object.defineProperty(exports, "Alert", {
+  enumerable: true,
+  get: function get() {
+    return _Alert["default"];
+  }
+});
 Object.defineProperty(exports, "Button", {
   enumerable: true,
   get: function get() {
@@ -183,6 +189,8 @@ var _Progress = _interopRequireDefault(require("./components/UI/Progress"));
 var _Spinner = _interopRequireDefault(require("./components/UI/Spinner"));
 
 var _Toast = _interopRequireDefault(require("./components/UI/Toast"));
+
+var _Alert = _interopRequireDefault(require("./components/UI/Alert"));
 
 var _Button = _interopRequireDefault(require("./components/UI/Button"));
 

@@ -18,6 +18,7 @@ const InputDate = (props) => {
 			<DatePicker
 				className="form-control"
 				selected={new Date(date)}
+				minDate={new Date()}
 				onChange={handleChange}
 				dateFormat="yyyy-MM-dd"
 				name={name}

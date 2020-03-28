@@ -9,9 +9,9 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var List = function List(props) {
-  var elements = props.elements,
-      capitalize = props.capitalize;
+var List = function List(_ref) {
+  var elements = _ref.elements,
+      capitalize = _ref.capitalize;
   return _react["default"].createElement("ul", {
     className: "list-group"
   }, elements.map(function (element, i) {

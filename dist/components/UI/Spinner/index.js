@@ -11,9 +11,9 @@ require("./Spinner.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var Spinner = function Spinner(props) {
-  var onBtn = props.onBtn,
-      showPadding = props.showPadding;
+var Spinner = function Spinner(_ref) {
+  var onBtn = _ref.onBtn,
+      showPadding = _ref.showPadding;
   return _react["default"].createElement("div", {
     className: "Spinner ".concat(onBtn ? 'onBtn' : '', " ").concat(showPadding ? 'showPadding' : '')
   }, _react["default"].createElement("div", {
